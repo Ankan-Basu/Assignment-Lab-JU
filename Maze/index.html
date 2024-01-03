@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rat in a Maze</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Rat in a Maze Problem</h1>
+
+    <div class="content">
+    <canvas id="mazeCanvas" width="400" height="400"></canvas>
+
+    <div class="maze-menu">
+    <div class="maze-gen-div">
+        <h3>Generate Maze</h3>
+        <label for="maze-dim">Dimension of Maze</label>
+        <input id="maze-dim" name="maze-dim" type="number" min="2" max="'100" value="15"/>
+        <label for="maze-multiedge">Fraction of Cycles</label>
+        <input id="maze-multiedge" type="number" name="maze-multiedge" min="0" max=".5" step="0.01" value="0.12">
+        <button id="gen-maze-button">Generate Maze</button>
+    </div>
+
+    <div class="maze-solve-div">
+        <h3>Solve Maze: A*</h3>
+        <button id="solve-button">Solve</button>
+    </div>
+    </div>
+    </div>
+
+    <script src='./algos/maze_gen.js'></script>
+    <script src="./algos/a_star.js"></script>
+    <script src='./script.js'></script>
+</body>
+</html>
