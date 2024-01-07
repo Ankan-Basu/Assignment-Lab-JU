@@ -14,6 +14,15 @@ document.addEventListener('DOMContentLoaded', function () {
     genButton.addEventListener('click', function () {
         let dim = Number(dimInput.value);
         let cycle_ratio = Number(cyclicityInput.value);
+
+        if (cycle_ratio >= 0.5 || cycle_ratio < 0) {
+            window.alert('Invalid Input for fraction of cycles.');
+            return;
+        }
+        if (dim < 0) {
+            window.alert('Invalid Input for dimension of maze.');
+            return;
+        }
         adjList = genMazeByDfs(genAdjList(dim), cycle_ratio);
         drawGraph(adjList, context);
     });
